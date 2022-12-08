@@ -1,5 +1,9 @@
 # testing materials
 import qrcode
+import cv2
+import pyzbar
+from pyzbar.pyzbar import decode
+
 color = ["black","white"]
 def qrGenerator(bd,bx):
     qr = qrcode.QRCode(
@@ -30,3 +34,22 @@ def qrInput():
     print("img saved")
 
 qrInput()
+
+
+def Read_QR():
+    Read = cv2.imread("wow_QR.png")
+    Decode = decode(Read)
+    for x in Decode:
+        print("Data: ",x.data)
+
+def Choose_read():
+    Wanna_read_Data = input("Wanna Read Data : ? y/n ~ ").lower()
+    if Wanna_read_Data == "y":
+        Read_QR()
+    elif Wanna_read_Data == "n":
+        print("Bie")
+    else:
+        print("Invalid option ~")
+        Choose_read()
+
+Choose_read()
