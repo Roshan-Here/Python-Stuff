@@ -1,5 +1,6 @@
 from docx import Document
 from docx.shared import Pt # for font sizing...
+from docx.enum.text import WD_UNDERLINE
 
 d = Document()
 
@@ -17,8 +18,12 @@ j = para.add_run(' check ', 'Strong')
 # added font name
 k = para.add_run('its a Subtle Reference check how i look', 'Subtle Reference')
 k.font.name = 'Times New Roman'
+# font sizing
 k.font.size = Pt(25)
-# run.style = 'Emphasis'
+# font underline
+k.font.underline = True
+# dotted underline | different types (https://python-docx.readthedocs.io/en/latest/api/enum/WdUnderline.html#wd-underline)
+j.font.underline = WD_UNDERLINE.DOT_DASH
 
 
 d.save("wow.docx")
