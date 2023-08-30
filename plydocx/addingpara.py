@@ -1,6 +1,7 @@
 from docx import Document
 from docx.shared import Pt # for font sizing...
 from docx.enum.text import WD_UNDERLINE
+from docx.shared import RGBColor # for font color setting....
 
 d = Document()
 
@@ -24,6 +25,6 @@ k.font.size = Pt(25)
 k.font.underline = True
 # dotted underline | different types (https://python-docx.readthedocs.io/en/latest/api/enum/WdUnderline.html#wd-underline)
 j.font.underline = WD_UNDERLINE.DOT_DASH
-
+j.font.color.rgb = RGBColor(142, 131, 88)
 
 d.save("wow.docx")
