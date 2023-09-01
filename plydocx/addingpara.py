@@ -12,6 +12,7 @@ from docx.enum.style import WD_STYLE
 
 ###############################
 # https://stackoverflow.com/questions/47666642/adding-an-hyperlink-in-msword-by-using-python-docx
+# https://github.com/python-openxml/python-docx/issues/74#issuecomment-244602378
 ################################
 
 def add_hyperlink(paragraph, url, text):
@@ -51,16 +52,6 @@ def add_hyperlink(paragraph, url, text):
 ###############################
 # https://stackoverflow.com/questions/47666642/adding-an-hyperlink-in-msword-by-using-python-docx
 ################################
-
-
-
-
-
-
-
-
-
-
 
 
 d = Document()
@@ -110,11 +101,13 @@ l.font.size = Pt(20)
 l.font.color.theme_color = MSO_THEME_COLOR.DARK_1
 #####################
 
-nxt = header.add_paragraph(" Github | ")
+nxt = header.add_paragraph(" Github ")
 nxt.alignment = WD_ALIGN_PARAGRAPH.CENTER
-k = nxt.add_run(' linkdin | Instagram')
+# k = nxt.add_run(' linkdin ')
 # k = nxt.add_hyperlink(text='foobar', url='http://github.com')
-add_hyperlink(nxt, text=' | Google ', url='http://google.com')
+add_hyperlink(nxt, text=' | Linkdin ', url='http://google.com')
+add_hyperlink(nxt, text=' | Instagram ', url='http://google.com')
+add_hyperlink(nxt, text=' | Wiki ', url='http://google.com')
 k.font.size = Pt(10)
 k.font.color.theme_color = MSO_THEME_COLOR.DARK_1
 
