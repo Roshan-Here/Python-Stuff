@@ -38,7 +38,7 @@ para = header.add_paragraph('')
 # para.font.color.rgb = RGBColor(142, 131, 88)
 # para.styles = d.styles["Header"]
 para.alignment = WD_ALIGN_PARAGRAPH.CENTER
-l = para.add_run('Muhammed Roshan P S ', 'Strong')
+l = para.add_run('Muhammed Roshan P S', 'Strong')
 l.font.size = Pt(24)
 l.font.color.theme_color = MSO_THEME_COLOR.DARK_1
 l.font.underline = True
@@ -98,6 +98,8 @@ k.font.underline = True
 # k.font.color.theme_color = MSO_THEME_COLOR.DARK_1 #2
 
 # https://www.resume.com/sample/civil-engineer/
+
+# work --tomorrow | sleep well 
 
 
 d.save("wow.docx")
