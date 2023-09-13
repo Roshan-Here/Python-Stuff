@@ -25,9 +25,13 @@ def paara():
 
 # to setup font clr,theme,name for simpliity
 # fff(dname=l,size=int(val),theme ='MSO_THEME_COLOR.ACCENT_1',fntname='Open Sans')
-def fff(dname,size=int(11),theme=MSO_THEME_COLOR.ACCENT_1,fntname='Open Sans'):
+def fff(dname,size=int(11),theme=MSO_THEME_COLOR.ACCENT_1,fntname='Open Sans',bbold=False):
     dname.font.size = Pt(size)
     dname.font.color.theme_color = theme
+    if bbold == True:
+        dname.bold = True
+    else:
+        pass
     dname.font.name = fntname
 
 
@@ -77,24 +81,9 @@ insertHR(nxt,fontsize='20')
 # Main Body
 ##############################################
 
+# heading-1
 
-# p = d.add_heading("adding para",level=0)
-
-para = d.add_paragraph('')
-l = para.add_run('TECHNICAL SKILLS')
-l.font.size = Pt(12)
-l.font.color.theme_color = MSO_THEME_COLOR.ACCENT_1
-l.font.name = 'Calibri'
-insertHR(para,color='black')
-# bold para
-
-para = d.add_paragraph('')
-para.add_run('wow its nice').bold = True
-# italic para on same stanzzza
-para.add_run(' oopz').italic = True
-# nice = d.add_section(start_type=3)
-
-para = d.add_heading('',level=2)
+para = d.add_heading('',level=3)
 l = para.add_run('TECHNICAL SKILLS')
 l.font.size = Pt(12)
 l.font.color.theme_color = MSO_THEME_COLOR.ACCENT_1
@@ -104,11 +93,11 @@ insertHR(para,color='black')
 para = paara() # mov on to simplicity
 l = para.add_run('   Languages : ')
 j = para.add_run('Python,C,JavaScript...etc')
-fff(l,size=int(12),fntname='Calibri')
+fff(l,size=int(12),theme=MSO_THEME_COLOR.DARK_1,fntname='Calibri',bbold=True)
 para = paara()
 l = para.add_run('   Languages : ')
 j = para.add_run('Python,C,JavaScript...etc')
-fff(j,size=int(12),fntname='Calibri')
+fff(l,size=int(12),theme=MSO_THEME_COLOR.DARK_1,fntname='Calibri',bbold=True)
 
 
 # https://www.resume.com/sample/civil-engineer/
