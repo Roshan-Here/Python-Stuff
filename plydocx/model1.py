@@ -18,6 +18,18 @@ from functions import insertHR,add_hyperlink
 
 d = Document()
 
+# for para creation simplicity 
+def paara():
+    para = d.add_paragraph('')
+    return para
+
+# to setup font clr,theme,name for simpliity
+# fff(dname=l,size=int(val),theme ='MSO_THEME_COLOR.ACCENT_1',fntname='Open Sans')
+def fff(dname,size=int(11),theme=MSO_THEME_COLOR.ACCENT_1,fntname='Open Sans'):
+    dname.font.size = Pt(size)
+    dname.font.color.theme_color = theme
+    dname.font.name = fntname
+
 
 #####################
 # Header Section
@@ -80,6 +92,23 @@ para = d.add_paragraph('')
 para.add_run('wow its nice').bold = True
 # italic para on same stanzzza
 para.add_run(' oopz').italic = True
+# nice = d.add_section(start_type=3)
+
+para = d.add_heading('',level=2)
+l = para.add_run('TECHNICAL SKILLS')
+l.font.size = Pt(12)
+l.font.color.theme_color = MSO_THEME_COLOR.ACCENT_1
+l.font.name = 'Calibri'
+insertHR(para,color='black')
+# below the heading....
+para = paara() # mov on to simplicity
+l = para.add_run('   Languages : ')
+j = para.add_run('Python,C,JavaScript...etc')
+fff(l,size=int(12),fntname='Calibri')
+para = paara()
+l = para.add_run('   Languages : ')
+j = para.add_run('Python,C,JavaScript...etc')
+fff(j,size=int(12),fntname='Calibri')
 
 
 # https://www.resume.com/sample/civil-engineer/
