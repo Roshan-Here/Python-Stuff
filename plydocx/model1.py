@@ -157,21 +157,43 @@ fff(l,size=int(10),iitalic=True,fntname='Calibri',theme=MSO_THEME_COLOR.DARK_1)
 # HEADING -3
 
 para = d.add_heading('',level=5)
-l = para.add_run('Projects')
+l = para.add_run('PROJECTS')
 l.font.size = Pt(12)
 l.font.color.theme_color = MSO_THEME_COLOR.ACCENT_1
 l.font.name = 'Calibri'
 insertHR(para,color='black')
 
 para = paara(spacing=True)
-l = para.add_run('   Students Corner')
+l = para.add_run('   Students Corner | ')
+j = para.add_run('Collage Internel Manager')
 fff(l,size=int(12),bbold=True,theme=MSO_THEME_COLOR.DARK_1,fntname='Tahoma')
+fff(j,size=int(12),bbold=True,theme=MSO_THEME_COLOR.DARK_1,fntname='Cascadia MonoCascadia Mono')
 para = paara(spacing=True)
-add_hyperlink(para, url='https://github.com/Roshan-Here', text='    StudentsCorner',color='0A66C2',underline=True)
+add_hyperlink(para, url='https://github.com/Roshan-Here', text='    StudentsCorner.com',color='0A66C2',underline=True)
 
-para = paara()
-l = para.add_run('Bullet Checking')
-l.style = 'List Bullet'
+for _ in range(3):
+    para = paara(spacing=True)
+    l = para.add_run('       •')
+    l.add_text(' An Web app to manage collage Students internel mark and attendance')
+    fff(l,size=int(10),iitalic=True,fntname='Calibri',theme=MSO_THEME_COLOR.DARK_1)
+
+
+para = paara(spacing=True)
+l = para.add_run('   Students Corner | ')
+j = para.add_run('Collage Internel Manager')
+fff(l,size=int(12),bbold=True,theme=MSO_THEME_COLOR.DARK_1,fntname='Tahoma')
+fff(j,size=int(12),bbold=True,theme=MSO_THEME_COLOR.DARK_1,fntname='Cascadia MonoCascadia Mono')
+para = paara(spacing=True)
+add_hyperlink(para, url='https://github.com/Roshan-Here', text='    StudentsCorner.com',color='0A66C2',underline=True)
+
+for _ in range(3):
+    para = paara(spacing=True)
+    l = para.add_run('       •')
+    l.add_text(' An Web app to manage collage Students internel mark and attendance')
+    fff(l,size=int(10),iitalic=True,fntname='Calibri',theme=MSO_THEME_COLOR.DARK_1)
+# i'm out of content...
+
+
 
 # https://www.resume.com/sample/civil-engineer/
 

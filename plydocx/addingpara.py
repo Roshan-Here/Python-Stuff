@@ -37,6 +37,7 @@ para = header.add_paragraph('')
 # para.text = "checking"
 # para.font.color.rgb = RGBColor(142, 131, 88)
 # para.styles = d.styles["Header"]
+# para.style = 'List Bullet'
 para.alignment = WD_ALIGN_PARAGRAPH.CENTER
 l = para.add_run('Muhammed Roshan P S', 'Strong')
 l.font.size = Pt(24)
