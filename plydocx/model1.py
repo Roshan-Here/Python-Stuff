@@ -29,10 +29,13 @@ def paara(spacing=False,Bbullet=False):
     return para
 
 # to setup font clr,theme,name for simpliity
-# fff(dname=l,size=int(val),theme ='MSO_THEME_COLOR.ACCENT_1',fntname='Open Sans')
-def fff(dname,size=int(11),theme=MSO_THEME_COLOR.ACCENT_1,fntname='Open Sans',bbold=False,iitalic=False):
+# fff(dname=l,size=int(val),theme ='MSO_THEME_COLOR.ACCENT_1',fntname='Open Sans',iitalic=True,bbold=True,Rrgb=RGBColor(142, 131, 88))
+def fff(dname,size=int(11),Rrgb=None,theme=MSO_THEME_COLOR,fntname='Open Sans',bbold=False,iitalic=False):
     dname.font.size = Pt(size)
-    dname.font.color.theme_color = theme
+    if Rrgb != None:
+        dname.font.color.rgb = Rrgb
+    else:
+        dname.font.color.theme_color = theme
     if bbold == True:
         dname.bold = True
     else:
@@ -43,6 +46,7 @@ def fff(dname,size=int(11),theme=MSO_THEME_COLOR.ACCENT_1,fntname='Open Sans',bb
         pass
     dname.font.name = fntname
 
+# Add blankSpace between para
 def addBlank(dname,count):
     for _ in range(count):
         dname.add_text(" ")
@@ -191,6 +195,54 @@ for _ in range(3):
     l = para.add_run('       •')
     l.add_text(' An Web app to manage collage Students internel mark and attendance')
     fff(l,size=int(10),iitalic=True,fntname='Calibri',theme=MSO_THEME_COLOR.DARK_1)
+# i'm out of content...
+
+# HEADING-4
+
+para = d.add_heading('',level=5)
+l = para.add_run('EXPERIENCE')
+l.font.size = Pt(12)
+l.font.color.theme_color = MSO_THEME_COLOR.ACCENT_1
+l.font.name = 'Calibri'
+insertHR(para,color='black')
+
+para = paara(spacing=True)
+l = para.add_run('   XEQUIST | ')
+j = para.add_run('WEB DEVELOPER INTERN') #make incomming txt into capz
+fff(l,size=int(11),fntname='Tahoma',bbold=True,theme=MSO_THEME_COLOR.DARK_1)
+
+# if # Present no need of K set k = para.add_run('Present)
+para = paara(spacing=True)
+k = para.add_run('  July 2022 - Dec 2022')
+m = k.add_text('| Remote') 
+fff(k,size=int(10),fntname='Trebuchet MS',Rrgb=RGBColor(125, 124, 120))
+
+for _ in range(3):
+    para = paara(spacing=True)
+    l = para.add_run('       •')
+    l.add_text(' Learned applicable usage of Djago applications')
+    fff(l,size=int(10),iitalic=True,fntname='Calibri',theme=MSO_THEME_COLOR.DARK_1)
+
+# Repeating same... our of content contribute content  
+
+para = paara(spacing=True)
+l = para.add_run('   XEQUIST | ')
+j = para.add_run('WEB DEVELOPER INTERN') #make incomming txt into capz
+fff(l,size=int(11),fntname='Tahoma',bbold=True,theme=MSO_THEME_COLOR.DARK_1)
+
+# if # Present no need of K set k = para.add_run('Present)
+para = paara(spacing=True)
+k = para.add_run('  July 2022 - Dec 2022')
+m = k.add_text('| Remote') 
+fff(k,size=int(10),fntname='Trebuchet MS',Rrgb=RGBColor(125, 124, 120))
+
+for _ in range(3):
+    para = paara(spacing=True)
+    l = para.add_run('       •')
+    l.add_text(' Learned applicable usage of Djago applications')
+    fff(l,size=int(10),iitalic=True,fntname='Calibri',theme=MSO_THEME_COLOR.DARK_1)
+
+
 # i'm out of content...
 
 
