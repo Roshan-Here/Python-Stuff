@@ -1,5 +1,5 @@
 from docx import Document
-from docx.shared import Pt,Inches # for font sizing...
+from docx.shared import Pt,Inches,Cm # for font sizing...
 from docx.enum.text import WD_UNDERLINE
 from docx.shared import RGBColor # for font color setting....
 from docx.enum.dml import MSO_THEME_COLOR #MSO theme selector color
@@ -7,14 +7,15 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH # alignmennt
 from docx.enum.style import WD_STYLE
 from functions import insertHR,add_hyperlink,fff
 from docx.enum.text import WD_LINE_SPACING # line spacing
+from docx.enum.table import WD_ROW_HEIGHT_RULE
 
 
 d = Document()
 def paara(spacing=False,Bbullet=False):
     para = d.add_paragraph('')
     if spacing == True:
-        para.paragraph_format.space_before = Pt(1)
-        para.paragraph_format.space_after = Pt(1)
+        para.paragraph_format.space_before = Pt(0)
+        para.paragraph_format.space_after = Pt(0)
         para.paragraph_format.line_spacing = Pt(10)
     if Bbullet == 1:
         para.style = 'List Bullet'
@@ -78,20 +79,46 @@ j = para.add_run('Professional Experience')
 fff(j,size=int(11),fntname='PT Serif',bbold=True)
 
 
-para = paara(spacing=True)
-j = para.add_run('Month YYYY-Present')
-para.alignment =  WD_ALIGN_PARAGRAPH.RIGHT
-fff(j,size=int(10),fntname='PT Serif',iitalic=True)
+# para = paara(spacing=True)
+# j = para.add_run('Month YYYY-Present')
+# para.alignment =  WD_ALIGN_PARAGRAPH.RIGHT
+# fff(j,size=int(10),fntname='PT Serif',iitalic=True)
 
+table = d.add_table(rows=1,cols=2)
+# row_cells = table.add_rows().cells
+row_cells = table.rows[0].cells
+row_cells[0].width = Inches(10)
+row_cells[0].height = Cm(0.01)
+# row_cells[0].height_rule = WD_ROW_HEIGHT_RULE.AT_LEAST
+row_cells[0].text = 'Job Heading'
+row_cells[1].text = 'Month YYYY-Present'
+row_cells[0].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.LEFT
+row_cells[1].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
+f = row_cells[0].paragraphs[0].runs[0].font
+y = row_cells[1].paragraphs[0].runs[0].font
+f.name = 'PT Sarif'
+f.size = Pt(10)
 
+y.name = 'PT Sarif'
+y.size = Pt(10)
+y.italic = True
 para = paara(spacing=True)
-j = para.add_run('Job Heading')
-k = j.add_text('Month YYYY-Present')
-k.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-fff(j,size=int(10),fntname='PT Serif',bbold=True)
-para = paara()
 k = para.add_run('Company name,place')
 fff(k,size=int(10),fntname='PT Serif')
+
+
+
+
+
+
+# para = paara(spacing=True)
+# j = para.add_run('Job Heading')
+# k = j.add_text('Month YYYY-Present')
+# k.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+# fff(j,size=int(10),fntname='PT Serif',bbold=True)
+# para = paara()
+# k = para.add_run('Company name,place')
+# fff(k,size=int(10),fntname='PT Serif')
 
 for _ in range(3):
     para = paara()
