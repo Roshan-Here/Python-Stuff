@@ -84,9 +84,21 @@ para.alignment =  WD_ALIGN_PARAGRAPH.RIGHT
 fff(j,size=int(10),fntname='PT Serif',iitalic=True)
 
 
-para = paara()
+para = paara(spacing=True)
 j = para.add_run('Job Heading')
+k = j.add_text('Month YYYY-Present')
+k.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 fff(j,size=int(10),fntname='PT Serif',bbold=True)
+para = paara()
+k = para.add_run('Company name,place')
+fff(k,size=int(10),fntname='PT Serif')
+
+for _ in range(3):
+    para = paara()
+    l = para.add_run('       •')
+    l.add_text(' Learned applicable usage of Djago applications')
+    fff(l,size=int(10),iitalic=True,fntname='Calibri',theme=MSO_THEME_COLOR.DARK_1)
+
 
 
 
