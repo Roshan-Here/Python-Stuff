@@ -1,0 +1,29 @@
+forms that we needed for model1.py
+
+sec1:Basics
+name:
+github:
+linkdin:
+phno:
+
+sec2:Technical Skills
+knwn languages:
+knwn database:
+libraries used:
+dev tools:
+
+sec3:Education Details
+collage:
+plus two:
+
+sec4:Projects
+prg1:name
+short info(heading)
+live prg link~if any
+3-points about prg
+
+sec5:Experience
+internship:company name
+duration:
+online | offline  or hybrid
+3 points about internship
